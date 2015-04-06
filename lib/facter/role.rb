@@ -1,9 +1,9 @@
-if Facter.value(:hostname) =~ /^([a-z]+)-([a-z]+)-[0-9]+$/
+if Facter.value(:hostname) =~ /^(\w+)-(\w+)-\d+$/
   Facter.add('role') do
     setcode {$2}
   end
 
-elsif Facter.value(:hostname) =~ /^([a-z]+)-([a-z]+)$/
+elsif Facter.value(:hostname) =~ /^(\w+)-(\w+)$/
   Facter.add('role') do
     setcode {$2}
   end
